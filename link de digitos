@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar al portapapeles</title>
+</head>
+<body>
+    <button id="copyButton">Copiar al portapapeles</button>
+
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function() {
+            const digits = "4815163219602813"; // Aquí los dígitos que deseas copiar
+            const el = document.createElement("textarea");
+            el.value = digits;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand("copy");
+            document.body.removeChild(el);
+            alert("¡Los dígitos han sido copiados al portapapeles!");
+        });
+    </script>
+</body>
+</html>
